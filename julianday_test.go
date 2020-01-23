@@ -25,7 +25,7 @@ func TestJulianDay(t *testing.T) {
 	}
 
 	for _, table := range tables {
-		j := JulianDayNumber(table.y, table.m, table.d)
+		j := Number(table.y, table.m, table.d)
 		if table.j != j {
 			t.Errorf("Julian Day of %d/%d/%d is wrong: %d, expected: %d\n",
 				table.y, table.m, table.d, j, table.j)
@@ -53,7 +53,7 @@ func TestJulianDate(t *testing.T) {
 
 	for _, table := range tables {
 		parsed, _ := time.Parse(time.RFC3339, table.timeString)
-		j := JulianDate(parsed)
+		j := Date(parsed)
 		if !cmp.Equal(j, table.j, opt) {
 			t.Errorf("Julian Date of %s is wrong: %.2f expected: %.2f\n",
 				table.timeString, j, table.j)

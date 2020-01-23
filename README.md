@@ -8,7 +8,7 @@ A Go library to compute [Julian day](https://en.wikipedia.org/wiki/Julian_day) g
 
 # Usage
 
-Import it
+Import it:
 
 ```
 import "github.com/starryalley/go-julianday"
@@ -18,13 +18,13 @@ Get Julian day number (JDN) (type `int64`) of a given date at noon (12:00PM):
 
 
 ```
-j := JulianDayNumber(2020, time.January, 17)
+j := julianday.Number(2020, time.January, 17)
 ```
 
 
 Get Julian date (type `float64`) of a given time:
 
 ```
-j := JulianDate(time.Now())
+j := julianday.Date(time.Now())
 ```
 

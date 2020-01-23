@@ -9,9 +9,9 @@ const (
 	unixEpochJulianDate = 2440587.5
 )
 
-// JulianDayNumber (JDN) returns the integer of Julian Day on the noon (12:00PM)
+// Number (JDN) returns the integer of Julian Day on the noon (12:00PM)
 // of this date.
-func JulianDayNumber(Y int, M time.Month, D int) int64 {
+func Number(Y int, M time.Month, D int) int64 {
 	// https://en.wikipedia.org/wiki/Julian_day#Julian_day_number_calculation
 	return (1461*(int64(Y)+4800+(int64(M)-14)/12))/4 +
 		(367*(int64(M)-2-12*((int64(M)-14)/12)))/12 -
@@ -19,7 +19,7 @@ func JulianDayNumber(Y int, M time.Month, D int) int64 {
 		int64(D) - 32075
 }
 
-// JulianDate returns the julian date of time
-func JulianDate(t time.Time) float64 {
+// Date returns the Julian date of time
+func Date(t time.Time) float64 {
 	return float64(t.Unix())/secondsInADay + unixEpochJulianDate
 }
